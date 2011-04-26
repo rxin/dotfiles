@@ -1,0 +1,10 @@
+term xterm
+vbell off
+startup_message off
+
+defscrollback 999999
+hardstatus alwayslastline "%{-b ck}%?%-Lw%?%{bg}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? %= %{r} %H %{g} %D %d/%m/%Y %0c "
+
+bindkey -k k5 prev
+bindkey -k k6 next
+
