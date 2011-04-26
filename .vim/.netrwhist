@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/rxin/stuff/cs186/hw2/postgresql-8.4.2/src'
+let g:netrw_dirhist_2='/Users/rxin/stuff/cs288-nlp/a3/log'
+let g:netrw_dirhist_3='/Users/rxin/stuff/sencha'
+let g:netrw_dirhist_4='/Users/rxin/.vim'
+let g:netrw_dirhist_5='/Users/rxin/stuff/cs288-nlp/a3/src/edu/berkeley/nlp/assignments/assign3/student'
