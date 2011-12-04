@@ -1,4 +1,4 @@
-term xterm
+term xterm-256color
 vbell off
 startup_message off
 

@@ -17,7 +17,9 @@ set autowriteall
 set incsearch " incremental search
 
 " highlight col 80
-au BufWinEnter * let w:m1=matchadd('Search', '\%<83v.\%>81v', -1)
+"autocmd BufWinEnter * let w:m1=matchadd('Search', '\%<83v.\%>81v', -1)
+" highlight col 101 - 105 for scala.
+autocmd BufWinEnter *scala* let w:m1=matchadd('Search', '\%<105v.\%>101v', -1)
 
 " nerd tree
 map <F2> :NERDTreeToggle<CR>
