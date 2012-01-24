@@ -12,6 +12,8 @@ filetype plugin indent on
 filetype indent on
 filetype on
 
+au FileType python setl shiftwidth=4 tabstop=4 ts=4 softtabstop=4
+
 set autoread
 set autowriteall
 set incsearch " incremental search
