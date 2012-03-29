@@ -8,3 +8,6 @@ hardstatus alwayslastline "%{-b ck}%?%-Lw%?%{bg}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? %=
 bindkey -k k5 prev
 bindkey -k k6 next
 
+# Make xterm scrolling work properly with screen.
+termcapinfo xterm-color|xterm|xterms|xs|rxvt ti@:te@
+
