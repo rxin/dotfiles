@@ -18,7 +18,7 @@ export HIVE_HOME="/Users/rxin/stuff/hive/hive-0.7.0"
 export PATH=$HIVE_HOME/bin:$PATH
 
 set -o physical  
-export TERM=xterm-color  
+export TERM=xterm-256color
 shopt -s checkwinsize
 
 export SHELL=/bin/bash
