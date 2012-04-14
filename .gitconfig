@@ -1,6 +1,13 @@
 [user]
 	name = Reynold Xin
-	email = reynoldx@gmail.com
+  email = rxin@cs.berkeley.edu
+
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 
 [color]
 	diff = auto
@@ -25,4 +32,10 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
+[merge]
+tool = p4merge
+[mergetool]
+prompt = false
+
 

@@ -2,20 +2,24 @@
 alias updatectags="/usr/local/bin/ctags -f ~/tags -R ~/stuff/shark/src/"
 alias grep="grep --color"
 
+alias gs="git status"
+alias gd="git diff"
+alias gdt="git difftool"
+
+export CLICOLOR=1
+export PS1="\[\e[0;32m\]\w $ \[\e[m\]"
+
+export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
+export HADOOP_INSTALL="/Users/rxin/Documents/shark/hadoop-0.20.204.0"
+export HADOOP_HOME="/Users/rxin/Documents/shark/hadoop-0.20.204.0"
+export PATH=$HIVE_HOME/bin:$PATH:~/bin
+
 alias cdspark="cd ~/Documents/shark/spark"
 alias cdshark="cd ~/Documents/shark/shark"
 alias cds="cd ~/Documents/shark/shark"
 alias cssharksrc="cd ~/Documents/shark/shark/src/main/scala/shark"
 alias cdss="cd ~/Documents/shark/shark/src/main/scala/shark"
-alias cdhive="cd ~/Documents/shark/hive"
-
-export CLICOLOR=1
-export PS1="\[\e[0;32m\]\w $ \[\e[m\]"
-
-export HADOOP_INSTALL="/Users/rxin/stuff/hadoop/hadoop-0.20.204.0"
-export HADOOP_HOME="/Users/rxin/stuff/hadoop/hadoop-0.20.204.0"
-export HIVE_HOME="/Users/rxin/stuff/hive/hive-0.7.0"
-export PATH=$HIVE_HOME/bin:$PATH
+alias cdhive="cd /Users/rxin/Documents/shark/hive"
 
 set -o physical  
 export TERM=xterm-256color
