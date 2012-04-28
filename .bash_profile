@@ -1,30 +1,25 @@
 
-alias updatectags="/usr/local/bin/ctags -f ~/tags -R ~/stuff/shark/src/"
-alias grep="grep --color"
 
+# Some common aliases for git.
 alias gs="git status"
 alias gd="git diff"
 alias gdt="git difftool"
 
+# Make common commands colorful!
 export CLICOLOR=1
+alias grep="grep --color"
+
+# color shell prompt
+# Also see http://jonisalonen.com/2012/your-bash-prompt-needs-this/
 export PS1="\[\e[0;32m\]\w $ \[\e[m\]"
+export PS1="\[\033[G\]$PS1"
 
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
-export HADOOP_INSTALL="/Users/rxin/Documents/shark/hadoop-0.20.204.0"
-export HADOOP_HOME="/Users/rxin/Documents/shark/hadoop-0.20.204.0"
-export PATH=$HIVE_HOME/bin:$PATH:~/bin
-
-alias cdspark="cd ~/Documents/shark/spark"
-alias cdshark="cd ~/Documents/shark/shark"
-alias cds="cd ~/Documents/shark/shark"
-alias cssharksrc="cd ~/Documents/shark/shark/src/main/scala/shark"
-alias cdss="cd ~/Documents/shark/shark/src/main/scala/shark"
-alias cdhive="cd /Users/rxin/Documents/shark/hive"
-
-set -o physical  
+# Make my terminal colorful.
+set -o physical
 export TERM=xterm-256color
 shopt -s checkwinsize
 
+# Use bash for shell.
 export SHELL=/bin/bash
 
 # export CDPATH=".:~"
