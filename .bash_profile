@@ -5,6 +5,9 @@ alias gs="git status"
 alias gd="git diff"
 alias gdt="git difftool"
 
+# sublimetext
+alias s="subl"
+
 # Make common commands colorful!
 export CLICOLOR=1
 alias grep="grep --color"
@@ -21,6 +24,17 @@ shopt -s checkwinsize
 
 # Use bash for shell.
 export SHELL=/bin/bash
+
+# Find file that matches the name and open it with (mac) vim.
+mfv() {
+  mvim -O $(find . -name "*$@*")
+}
+fv() {
+  vim -O $(find . -name "*$@*")
+}
+fs() {
+  subl $(find . -name "*$@*")
+}
 
 # export CDPATH=".:~"
 if [ -f `brew --prefix`/etc/bash_completion ]; then

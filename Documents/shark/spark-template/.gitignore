@@ -1,0 +1,30 @@
+target/
+build/
+project/boot
+lib_managed/
+
+# Compiled Source
+*.class
+
+# Packages
+#*.jar
+
+# Log Files
+*.log
+
+# Eclipse project files
+.classpath
+.project
+.settings
+
+# emacs backup
+*~
+
+# tmp files
+*.swp
+.cache
+
+# mac os file
+*.DS_Store
+
+
