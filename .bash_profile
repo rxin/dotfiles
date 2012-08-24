@@ -5,8 +5,10 @@ alias gs="git status"
 alias gd="git diff"
 alias gdt="git difftool"
 
-# sublimetext
+# editors
 alias s="subl"
+alias m="mvim"
+alias v="vim"
 
 # Make common commands colorful!
 export CLICOLOR=1
@@ -50,5 +52,4 @@ fi
 if [ -f ~/.bash_profile_private ]; then
   source ~/.bash_profile_private
 fi
-
 
