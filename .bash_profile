@@ -4,6 +4,7 @@
 alias gs="git status"
 alias gd="git diff"
 alias gdt="git difftool"
+alias gdw="git whatchanged -p --word-diff --color=always | less -r"
 
 # editors
 alias s="subl"
