@@ -11,14 +11,14 @@ alias s="subl"
 alias m="mvim"
 alias v="vim"
 
+export MAVEN_OPTS="-Xmx1g -XX:MaxPermSize=200m"
+
 # Make common commands colorful!
 export CLICOLOR=1
 alias grep="grep --color"
 
 # color shell prompt
-# Also see http://jonisalonen.com/2012/your-bash-prompt-needs-this/
-export PS1="\[\e[0;32m\]\w $ \[\e[m\]"
-export PS1="\[\033[G\]$PS1"
+export PS1="\[\e[1;31m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\n> "
 
 # Make my terminal colorful.
 set -o physical
@@ -53,4 +53,36 @@ fi
 if [ -f ~/.bash_profile_private ]; then
   source ~/.bash_profile_private
 fi
+
+
+function cds {
+  if [ -d ./core ]; then
+    cd ./core/src/main/scala/spark
+  else
+    cd ./src/main/scala/shark
+  fi
+}
+
+function cdt {
+  if [ -d ./core ]; then
+    cd ./core/src/test/scala/spark
+  else
+    cd ./src/test/scala/shark
+  fi
+}
+
+function cdg {
+  if [ -d ./graphlab/src/main/scala/spark/graphlab ]; then
+    cd ./graphlab/src/main/scala/spark/graphlab
+  else
+    cd /scratch/rxin/spark-graphlab
+  fi
+}
+
+function setuplocalhosts {
+  sudo ifconfig lo0 alias 127.100.0.1
+  sudo ifconfig lo0 alias 127.100.0.2
+  sudo ifconfig lo0 alias 127.100.0.3
+  sudo ifconfig lo0 alias 127.100.0.4
+}
 
