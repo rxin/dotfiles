@@ -72,10 +72,10 @@ function cdt {
 }
 
 function cdg {
-  if [ -d ./graphlab/src/main/scala/spark/graphlab ]; then
-    cd ./graphlab/src/main/scala/spark/graphlab
+  if [ -d ./graph/src/main/scala/spark/graph ]; then
+    cd ./graph/src/main/scala/spark/graph
   else
-    cd /scratch/rxin/spark-graphlab
+    cd /scratch/rxin/spark-graph
   fi
 }
 
