@@ -1,5 +1,4 @@
 
-
 # Some common aliases for git.
 alias gs="git status"
 alias gd="git diff"
@@ -18,7 +17,7 @@ export CLICOLOR=1
 alias grep="grep --color"
 
 # color shell prompt
-export PS1="\[\e[1;31m\]\h\[\e[0m\]:\[\e[0;36m\]\w\[\e[0m\]\n> "
+export PS1="\[\e[0;31m\]\u \[\e[0;37m\]@ \[\e[0;31m\]\h \[\e[0;37m\]: \[\e[0;36m\]\w \[\e[0m\]\n> "
 
 # Make my terminal colorful.
 set -o physical
