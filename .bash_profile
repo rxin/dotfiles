@@ -1,4 +1,3 @@
-
 # Some common aliases for git.
 alias gs="git status"
 alias gd="git diff"
@@ -16,8 +15,13 @@ export MAVEN_OPTS="-Xmx1g -XX:MaxPermSize=200m"
 export CLICOLOR=1
 alias grep="grep --color"
 
-# color shell prompt
-export PS1="\[\e[0;31m\]\u \[\e[0;37m\]@ \[\e[0;31m\]\h \[\e[0;37m\]: \[\e[0;36m\]\w \[\e[0m\]\n> "
+# color shell prompt (setup git branch information if on Mac OS X)
+if [ "$(uname)" == "Darwin" ]; then
+  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+  export PS1="\[\e[0;31m\]\u \[\e[0;37m\]@ \[\e[0;31m\]\h \[\e[0;37m\]: \[\e[0;36m\]\w\[\e[0m\]\$(__git_ps1) \n> "
+else
+  export PS1="\[\e[0;31m\]\u \[\e[0;37m\]@ \[\e[0;31m\]\h \[\e[0;37m\]: \[\e[0;36m\]\w \[\e[0m\]\n> "
+fi
 
 # Make my terminal colorful.
 set -o physical
@@ -77,11 +81,3 @@ function cdg {
     cd /scratch/rxin/spark-graph
   fi
 }
-
-function setuplocalhosts {
-  sudo ifconfig lo0 alias 127.100.0.1
-  sudo ifconfig lo0 alias 127.100.0.2
-  sudo ifconfig lo0 alias 127.100.0.3
-  sudo ifconfig lo0 alias 127.100.0.4
-}
-
