@@ -1,15 +1,17 @@
+
 # Some common aliases for git.
 alias gs="git status"
 alias gd="git diff"
-alias gdt="git difftool"
-alias gdw="git whatchanged -p --word-diff --color=always | less -r"
+
+alias cdspark="cd /scratch/rxin/spark"
 
 # editors
 alias s="subl"
-alias m="mvim"
-alias v="vim"
 
-export MAVEN_OPTS="-Xmx1g -XX:MaxPermSize=200m"
+# switching Python 3
+alias py3k="source activate py3k"
+
+export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M"
 
 # Make common commands colorful!
 export CLICOLOR=1
@@ -17,9 +19,10 @@ alias grep="grep --color"
 
 # color shell prompt (setup git branch information if on Mac OS X)
 if [ "$(uname)" == "Darwin" ]; then
-  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+  #source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
   export PS1="\[\e[0;31m\]\u \[\e[0;37m\]@ \[\e[0;31m\]\h \[\e[0;37m\]: \[\e[0;36m\]\w\[\e[0m\]\$(__git_ps1) \n> "
 else
+  source /etc/bash_completion.d/git
   export PS1="\[\e[0;31m\]\u \[\e[0;37m\]@ \[\e[0;31m\]\h \[\e[0;37m\]: \[\e[0;36m\]\w \[\e[0m\]\n> "
 fi
 
@@ -31,13 +34,6 @@ shopt -s checkwinsize
 # Use bash for shell.
 export SHELL=/bin/bash
 
-# Find file that matches the name and open it with (mac) vim.
-mfv() {
-  mvim -O $(find . -name "*$@*")
-}
-fv() {
-  vim -O $(find . -name "*$@*")
-}
 fs() {
   subl $(find . -name "*$@*")
 }
@@ -56,28 +52,3 @@ fi
 if [ -f ~/.bash_profile_private ]; then
   source ~/.bash_profile_private
 fi
-
-
-function cds {
-  if [ -d ./core ]; then
-    cd ./core/src/main/scala/spark
-  else
-    cd ./src/main/scala/shark
-  fi
-}
-
-function cdt {
-  if [ -d ./core ]; then
-    cd ./core/src/test/scala/spark
-  else
-    cd ./src/test/scala/shark
-  fi
-}
-
-function cdg {
-  if [ -d ./graph/src/main/scala/spark/graph ]; then
-    cd ./graph/src/main/scala/spark/graph
-  else
-    cd /scratch/rxin/spark-graph
-  fi
-}
