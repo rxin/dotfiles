@@ -3,7 +3,7 @@
 autoload -Uz compinit && compinit
 
 # Some common aliases
-alias ll="ls -ltrh" # list, sort by last modified time, size by unit
+alias ll="ls -ltrha" # all files, list, sort by last modified time, size by unit
 alias ls='ls -F' # / for dir, * executable, ... see man ls
 alias gs="git status"
 alias gd="git diff"
@@ -40,3 +40,5 @@ HOSTNAME=$(hostname)
 PROMPT='%F{red}%n%f @ %F{red}$HOSTNAME%f : %F{cyan}${PWD/#$HOME/~}%f ${vcs_info_msg_0_}'$'\n''> '
 
 ##############################  prompt setting end  ##############################
+
+[ -f .zshrc_private ] && source .zshrc_private
