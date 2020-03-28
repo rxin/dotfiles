@@ -3,13 +3,11 @@
 autoload -Uz compinit && compinit
 
 # Some common aliases
-alias ll="ls -ltrh"
-alias ls='ls -GwF'
+alias ll="ls -ltrh" # list, sort by last modified time, size by unit
+alias ls='ls -F' # / for dir, * executable, ... see man ls
 alias gs="git status"
 alias gd="git diff"
-
-# Shortcut for VS Code
-alias s="code"
+alias s="code" # vscode
 
 # Shortcut for opening all files whose names include the first parameter
 fs() {
@@ -20,12 +18,13 @@ export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M"
 
 # Make common commands colorful!
 export CLICOLOR=1
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 alias grep="grep --color"
 
-# Make my terminal colorful.
-set -o physical
-export TERM=xterm-256color
+# Chase symlinks
+set symlinks = chase
 
+############################## prompt setting begin ##############################
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
@@ -39,3 +38,5 @@ HOSTNAME=$(hostname)
 
 # username in red @ hostname in red : current dir (git info)\n
 PROMPT='%F{red}%n%f @ %F{red}$HOSTNAME%f : %F{cyan}${PWD/#$HOME/~}%f ${vcs_info_msg_0_}'$'\n''> '
+
+##############################  prompt setting end  ##############################
