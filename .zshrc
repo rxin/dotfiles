@@ -1,5 +1,10 @@
 
-# Some common aliases for git
+# Enable the default zsh completions
+autoload -Uz compinit && compinit
+
+# Some common aliases
+alias ll="ls -ltrh"
+alias ls='ls -GwF'
 alias gs="git status"
 alias gd="git diff"
 
