@@ -18,7 +18,6 @@ fs() {
   subl $(find . -name "*$@*")
 }
 
-
 export MAVEN_OPTS="-Xmx2g -XX:MaxPermSize=512M"
 
 # Make common commands colorful!
@@ -28,6 +27,12 @@ alias grep="grep --color"
 
 # Chase symlinks
 set symlinks = chase
+
+# Bazel commands
+alias bazeltestnocache='bazel test --test_output=streamed --cache_test_results=no '
+alias bb='bazel build ...'
+
+export PATH="/Users/rxin/work/universe/kube-config":$PATH
 
 ############################## prompt setting begin ##############################
 # Load version control information
